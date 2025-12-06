@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 21</title>
+</head>
+
+<body>
+    <!--Usa filter para eliminar todos los valores que sean iguales al primer
+elemento, incluido éste. Por ejemplo, para [“a”, “c”,”a”,”g”,”a”], el array
+resultante será [“c”,”g”].-->
+<script>
+    const letras = [
+           'a', 'c','a','g','a' ];
+    // Guardamos el primer elemento
+    const primerElemento = letras[0];
+
+    // Filtramos todos los elementos que sean distintos al primero
+    const resultado = letras.filter(letra => letra !== primerElemento);
+
+    console.log(resultado); // ["c", "g"]
+</script>
+
+
+</body>
+
+</html>

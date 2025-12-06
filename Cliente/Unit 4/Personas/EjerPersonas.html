@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="styles.css">
+    <title>Ejercicio Personas</title>
+</head>
+<body>
+    <table>
+            <thead>
+                <th onclick="ordenarTabla('nombre')">Nombre</th>
+                <th onclick="ordenarTabla('apellido')">Apellido</th>
+                <th onclick="ordenarTabla('dni')">DNI</th>
+            </thead>
+              <tbody id="tabla-body">
+               
+              </tbody>
+              <tfoot>
+                 <tr>
+                    <td> <input type="text" id="nombre" name="nombre"  placeholder="nombre" required></td>
+                    <td><input type="text" id="apellido" name="apellido"  placeholder="apellido" required></td>
+                    <td><input type="text" id="dni" name="dni"  placeholder="dni" required></td>
+                </tr>
+              </tfoot>
+
+    </table>
+ <button type="submit" onclick="agregarFila()" class="form-button">Añadir</button>
+ <script src="ejerPersonas.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+h1 {
+    text-align: center;
+}
+
+.styled-table {
+    align-items: center;
+    text-align: center;
+    caption-side: bottom;
+    width: 40%;
+    margin: auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fff;
+    overflow: hidden;
+    table-layout: auto;
+}
+
+.styled-table caption {
+    padding: 14px 18px;
+    color: #333;
+    font-size: 15px;
+    align-items: center;
+}
+
+.styled-table thead,
+th {
+    background-color: #26ad9e;
+    color: white;
+    border: 1px solid lightgray;
+}
+
+.impares td {
+    background-color: rgb(199, 192, 192);
+    border: 0.5px solid lightgray;
+    table-layout: fixed;
+}

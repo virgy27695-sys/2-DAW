@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+</head>
+
+<body>
+    <!--Utiliza map para convertir un array de temperaturas expresadas en
+Celsius un array de las mismas tempreraturas expresadas en grados
+Fahrenheit.
+Nota: si multiplicamos una temperatura expresada en grados Celsius por 9/5
+y luego le sumamos 32 , tendremos la temperatura expresada en grados
+Fahrenheit..-->
+    <script>
+        const celsius = [0, 20,36,35.4];
+        const fahrenheit = celsius.map(temp => (temp * 9/5) + 32); 
+        document.write(celsius + "</br>"); 
+        document.write(fahrenheit); 
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+
+<body>
+    <!--Haz un closure que, como argumento a la hora de crearlo, establezca
+un número mayor o igual a cero. Cada vez que se invoque el closure,
+devolverá primero un cero, a la siguiente llamada un 1, y así hasta el número
+que se estableció al inicio. La siguiente invocación volverá a dar 0, la
+siguiente 1, así sucesivamente.
+Crea dos closures (cada uno con un número distinto) de ese tipo y observa que
+funcionan indepencientemente.-->
+    <script>
+        function acumulado(max) {
+            let contador = 0;
+            return function () {
+                return (contador++) % (max + 1);
+            }
+        }
+        const miFuncion = acumulado(10);
+        console.log(miFuncion());
+    </script>
+
+
+</body>
+
+</html>

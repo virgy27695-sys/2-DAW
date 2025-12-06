@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 19</title>
+</head>
+
+<body>
+    <!--Utiliza filter para eliminar los elementos pared (el primero y el
+último) del array nums .-->
+    <script>
+        const animal = [
+            'elefante', 'computadora', 'agua',
+            'murcielago', 'oso pardo'
+        ];
+        const espacio = animal.filter(anim => anim.replace(/[^aeiou]/gi, '').length > 3);
+        console.log(espacio);
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagenes</title>
+    <meta charset="UTF-8">
+    <style>
+        ul {
+            list-style: none; /* Eliminamos los marcadores predeterminados */
+            padding: 0; /* Eliminamos el relleno predeterminado */
+        }
+
+        li::before {
+            content: ""; /* Dejamos el contenido en blanco */
+            display: inline-block;
+            width: 20px; /* Ancho de la imagen de la viñeta */
+            height: 20px; /* Alto de la imagen de la viñeta */
+            background-image: url('https://png.pngtree.com/png-clipart/20240608/original/pngtree-beautiful-cartoon-bird-images-png-image_15286053.png'); /* Ruta de la imagen de la viñeta */
+            background-size: contain; /* Ajustar la imagen al contenedor */
+            margin-right: 10px; /* Espacio entre la viñeta y el texto del elemento */
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista con Imagen de Viñeta</h1>
+    <ul>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+    </ul>
+</body>

@@ -1,0 +1,41 @@
+/* Estilos generales del boton */
+button {
+    padding: 10px 20px;
+    border: none;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+/* Boton normal */
+.btn-normal {
+    background-color: #3498db;
+    color: white;
+    cursor: crosshair;
+}
+
+.btn-normal:hover {
+    transform: scale(1.1);
+}
+
+/* Boton de describir */
+.btn-outline {
+    border: 2px solid #3498db;
+    background: transparent;
+    color: #3498db;
+    cursor: pointer;
+}
+
+.btn-outline:hover {
+    transform: scale(1.1);
+}
+
+/* Boton alerta */
+.btn-alert {
+    background-color: #e74c3c;
+    color: white;
+    cursor: help;
+}
+
+.btn-alert:hover {
+    transform: scale(1.1);
+}

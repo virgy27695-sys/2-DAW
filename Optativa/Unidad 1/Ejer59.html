@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 59</title>
+</head>
+<body>
+    <!--Realiza un ejercicio cree los 100 primeros números primos. Para
+comprobar si un número es primo. basta con comprobar que el número no sea
+divisible con cualquier número menor que él.
+La primera optimización sería saber que basta con comprobar que no es
+divisible por ningún primo menor que él (puedes emplear una lista para ir
+almacenando los números primos).
+Puedes optimizar aún más el algoritmo teniendo en cuenta que para
+comprobar si un número es primo tan solo es necesario comprobar si es 
+divisible con los números primos menores o iguales que la raíz cuadrada del
+número que se está comprobando. 2, 3, 5, 7, 11, 13-->
+ <script>
+        document.write("<pre>");
+        
+        const prim = [];
+        let candidato = 2;
+        for (let i = 0; i <= 100; candidato++) { 
+            let esPrimo = true;
+            for(let j = 2; j < candidato -1; j++){
+                if(candidato % j == 0 ){
+                    esPrimo = false;
+                }
+            }
+            if(esPrimo){
+                prim.push[candidato];
+                i++
+            }
+            document.write("Los números primos hasta el 100 son: " + prim[candidato]);
+            document.write("</br>"); 
+        }                
+        document.write("</pre>");
+    </script>
+</body>
+</html>

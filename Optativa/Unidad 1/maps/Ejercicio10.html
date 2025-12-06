@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 10</title>
+</head>
+
+<body>
+    <!--Utiliza map para, a partir del a un del array de personas usado
+anteriormente, se añada, a cada uno de los objetos del array, un campo
+llamado ciudad , con valor Jaén . Observa que cada elemento de array debe
+conservar sus otros campos, sin añadir ni borrar ninguno.-->
+    <script>
+        const personas = [
+            { nombre: 'Juan', edad: 25 },
+            { nombre: 'Maria', edad: 30 },
+            { nombre: 'Pedro', edad: 22 }
+        ];
+        const c2 = personas.map(({nombre, edad, ciudad}) =>
+            ({nombre: nombre, edad: edad, ciudad:"Jaén"})
+        );
+        console.log(c2);
+    </script>
+
+
+</body>
+
+</html>

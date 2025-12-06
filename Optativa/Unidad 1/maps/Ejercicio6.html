@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+</head>
+
+<body>
+    <!--Utiliza map para extraer los nombres del array de personas usado
+en los ejemplos anteriores. El resultado debe ser: [ 'Juan', 'Maria',
+'Pedro' ] .-->
+    <script>
+        const personas = [
+            { nombre: 'Juan', edad: 25 },
+            { nombre: 'Maria', edad: 30 },
+            { nombre: 'Pedro', edad: 22 }
+        ];
+        const nombres = personas.map(obj => obj.nombre);
+        document.write(nombres + "</br>");
+    </script>
+
+
+</body>
+
+</html>

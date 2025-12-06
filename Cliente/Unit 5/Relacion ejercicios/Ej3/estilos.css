@@ -1,0 +1,18 @@
+table {
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+td {
+    width: 80px;
+    height: 80px;
+    background-color: lightblue;
+    text-align: center;
+    font-size: 30px;
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+.acertado {
+    background-color: lightgreen !important;
+}

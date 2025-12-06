@@ -1,0 +1,59 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
+h1 {
+  text-align: center;
+  color: #222;
+}
+
+h2 {
+  color: #004080;
+  border-bottom: 2px solid #004080;
+  padding-bottom: 5px;
+}
+
+/* Contenedor general para organizar columnas */
+.container {
+  display: grid;
+  grid-template-columns: 1fr; /* una columna por defecto */
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Listas */
+ul {
+  background-color: #fff;
+  padding: 15px 25px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  list-style-type: none;
+}
+
+li {
+  margin: 10px 0;
+}
+
+strong {
+  color: #333;
+}
+
+/* Diseño responsive */
+
+/* De 600px a 1200px → dos columnas */
+@media screen and (min-width: 600px) and (max-width: 1199px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* A partir de 1200px → tres columnas */
+@media screen and (min-width: 1200px) {
+  .container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

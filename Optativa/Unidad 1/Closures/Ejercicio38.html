@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 38</title>
+</head>
+
+<body>
+    <!--Crea un closure que tenga un argumento que sea una tasa (por
+ejemplo 1.08). Luego, cada vez que se llame al closure, se realizará con un
+argumento, y te devolverá la tasa multiplicada por el argumento pasado.-->
+    <script>
+        function tasa(valorInicial) {
+            let porcentaje = valorInicial;
+            function muestraTasa(añadirTasa) {
+                porcentaje *=  añadirTasa;
+                console.log(porcentaje); //aumentamos mensaje
+            }
+            return muestraTasa; //devuelve una función
+        }
+        const miFuncion = tasa(1.08); 
+        miFuncion(10); 
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 10</title>
+</head>
+
+<body>
+    <label>Numero 1</label>
+    <input type="text" id="op1" name="numero1">
+    </br></br></br>
+    <label>Numero 2</label>
+    <input type="text" id="op2" name="numero2">
+    </br></br></br>
+    <button onclick="sumar()">Resultado</button>
+    </br></br></br>
+    <div id="resultado"></div>
+    <script>
+        function sumar() {
+            let cadenaOp1 = document.getElementById('op1').value;
+            let cadenaOp2 = document.getElementById('op2').value;
+            let op1 = Number(document.getElementById('op1').value);
+            let op2 = Number(document.getElementById('op2').value);
+            if(cadenaOp1 =="" || op1 == NaN){
+                document.getElementById('resultado').innerHTML ="op1 falla";
+            } else if(cadenaOp1 ==""|| op2 == NaN){
+                document.getElementById('resultado').innerHTML ="op2 falla";
+            } else{
+
+            document.getElementById('resultado').innerHTML = op1 + op2;
+            }
+        }
+
+    </script>
+
+
+</body>
+
+</html>

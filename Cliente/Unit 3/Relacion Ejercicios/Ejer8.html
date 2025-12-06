@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Competencia de Dados</title>
+  <style>
+    body {
+      font-family: monospace;
+      text-align: center;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 30px;
+    }
+    h1 {
+      color: #333;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .resultado {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-top: 20px;
+      padding: 20px;
+      text-align: left;
+      display: inline-block;
+      max-width: 450px;
+      font-family: monospace;
+    }
+    .dado {
+      display: inline-block;
+      margin: 5px;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background: #fafafa;
+      font-weight: bold;
+      white-space: pre;
+    }
+    .final {
+      font-weight: bold;
+      color: #222;
+      margin-top: 15px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Competencia de Dados</h1>
+  <p>Dos jugadores lanzan un dado durante 3 rondas. ¡Que gane el mejor!</p>
+  <button onclick="jugarCompetencia(3)">Lanzar Dados</button>
+
+  <div id="resultado" class="resultado"></div>
+
+  <script src="ejer8.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

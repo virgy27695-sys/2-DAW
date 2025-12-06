@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 37</title>
+</head>
+
+<body>
+    <!--Crea un closure como el anterior, pero en el que el valor mostrado
+inicialmente esté determinado por un parámetro pasado al crear el closure (la
+función invocada tendrá que admitir un argumento).-->
+    <script>
+        function mensajeria(mensInicial) {
+            let mensaje = mensInicial;
+            function muestraMensaje(mensAdicional) {
+                mensaje = mensaje + mensAdicional
+                console.log(mensaje); //aumentamos mensaje
+            }
+            return muestraMensaje; //devuelve una función
+        }
+        const miFuncion = mensajeria(0); 
+        miFuncion(+ 1); 
+        miFuncion(+ 1); 
+    </script>
+
+
+</body>
+
+</html>

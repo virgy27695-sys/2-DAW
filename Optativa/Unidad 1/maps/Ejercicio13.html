@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 13</title>
+</head>
+
+<body>
+    <!--Tenemos un array que es usa sucesión de unos y ceros, por ejemplo:
+[0,1,1,1,0,0,1,0]. Cada uno de los elementos del array resultante será un XOR
+de el elemento correspondiente con el anterior (el primer elemento queda
+igual).
+Por ejemplo, para el segundo elemento, el valor resultante será XOR(0,1)=1.
+Para el tercer elemento: XOR(1,1)=0. El resultado final sería:
+[0,1,0,0,1,0,1,1].-->
+    <script>
+        const num = [0,1,1,1,0,0,1,0];
+
+const c2 = num.map((num, pos, arr) =>
+    pos !== 0 ? num ^ arr[pos - 1] : num
+);
+        console.log(c2);
+    </script>
+
+
+</body>
+
+</html>

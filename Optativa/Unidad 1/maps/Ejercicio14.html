@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 14</title>
+</head>
+
+<body>
+    <!--Utiliza filter para quedarte solo con los valores numéricos del
+array nums mayores que cero.
+Nota: si comparamos una cadena con el operador > (por ejemplo ' cad ' >0 )
+o comparamos con un objeto (por ejemplo {id: 3}>0 ), el resultado es
+siempre false.-->
+    <script>
+        const nums = [ 2.1, 0, -3, "Hola", {id: 3}, "0", {} ];
+        const mayoresCero = nums.filter( e => e > 0 );
+        console.log(mayoresCero);
+    </script>
+
+
+</body>
+
+</html>

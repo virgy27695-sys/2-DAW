@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 57</title>
+</head>
+<body>
+    <!--Crea un programa en la que el usuario introduzca los valores de alto
+y ancho de un rectángulo, los cuales serán ambos impares y mayores que 4. El
+programa dibujará el rectángulo de bordes doble (usa los caracteres: ╔ ╗ ╚ ╝
+) y, en su interior, dibujará un rectángulo de borde simple (usa y═ ║ ┌ ┐ └ ┘
+). Finalmente, en el centro habrá un asterisco, estando el resto del interior─ │
+vacío. Intenta hacer el código lo más compacto y eficiente posible-->
+ <script>
+        document.write("<pre>");
+        let pregunta = ("Introduce el alto");
+        let alto = window.prompt(pregunta);
+        let pregunta2 = ("Introduce el ancho");
+        let ancho = window.prompt(pregunta2);
+        for (let i = 0; i < alto; i++) {
+                 if(i === 0){
+                    document.write("╔" + "=".repeat(ancho) + "╗");
+                 }else if(i ==  1){
+                    document.write("║ ┌" + "═".repeat(ancho -4) + "┐ ║");
+                 } else if(i == alto - 1){
+                    document.write("╚" + "=".repeat(ancho) + "╝" );
+                 } else if(i == alto -2){
+                    document.write("║ └" + "═".repeat(ancho -4) + "┘ ║");
+                 } else if((i == alto -1)){
+                    document.write("║ │" + " ".repeat(ancho -2) + ((ancho -5)/2));
+                 }else{
+                    document.write("║ │" + " ".repeat(ancho -4) + "│ ║");
+                 }  
+                 document.write("</br>");  
+            }
+                
+        document.write("</pre>");
+    </script>
+</body>
+</html>

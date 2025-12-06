@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aplicación para hacer exámenes tipo test</title>
+    <link rel="stylesheet" href="css/style_index.css">
+    
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <img src="img/icono.png" alt="Logo" class="logo-img">
+                <h1 class="logo-title">Exámenes de Virginia</h1>
+            </a>
+
+            <div class="nav-links">
+                <a href="#">Contacto</a>
+                <a href="#">Sobre nosotros</a>
+                <button class="sign-in-btn">Iniciar sesión</button>
+                <button class="sign-up-btn">Registrarse</button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="login-wrapper">
+        <div class="container-form sign-in">
+            <form class="formulario" id="form-login">
+                <h2 class="create-account">Iniciar sesión</h2>
+                <input type="text" id="nombre-login" placeholder="Nombre" required>
+                <input type="password" id="password-login" placeholder="Contraseña" required>
+                <button type="submit" id="confirmar">Iniciar sesión</button>
+            </form>
+        </div>
+
+        <div class="container-form sign-up">
+            <form class="formulario" id="form-register">
+                <h2 class="create-account">Crear cuenta</h2>
+                <fieldset>Nombre:</fieldset>
+                <input type="text" id="nombre-register" placeholder="Nombre" required>
+                <fieldset>Contraseña:</fieldset>
+                <input type="password" id="password-register" placeholder="Contraseña" required>
+                <fieldset>Confirmar contraseña:</fieldset>
+                <input type="password" id="confirm-password-register" placeholder="Confirmar contraseña" required>
+                <button id="confirmar" type="submit" >Registrarse</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Exámenes de Virginia. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+<script src="JavaScript/usuarios.js"></script>
+    <script src="JavaScript/script_index.js"></script>
+
+</html>

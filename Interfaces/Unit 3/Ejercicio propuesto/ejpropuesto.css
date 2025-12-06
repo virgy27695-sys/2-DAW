@@ -1,0 +1,21 @@
+#azul{
+    background-color: blue;
+    width: 30px;
+    height: 30px;
+    margin: 40px;
+    border-radius: 40px 40px 0px 0px;
+}
+#verde{
+background-color: green;
+    width: 30px;
+    height: 30px;
+    margin: 40px;
+    border-radius: 0px 0px 30px 30px;
+}
+#morado{
+    background-color: rgb(153, 48, 148);
+    width: 30px;
+    height: 30px;
+    margin: 40px;
+    border-radius: 100%;
+}

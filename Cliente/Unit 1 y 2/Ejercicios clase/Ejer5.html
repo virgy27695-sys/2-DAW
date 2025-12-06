@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+<body>
+<script>
+    
+    let respuesta = prompt("¿Cuantos años tienes?");
+    let edad = Number(respuesta);
+    if(edad < 0 || isNaN(respuesta)){
+        alert("Has de poner un número válido");
+    } else{
+       
+    switch(true){
+        case edad < 0:
+            alert("Error");
+            break;
+        case edad <= 12:
+            alert("Eres un niño");
+            break;
+        case edad <= 26:
+            alert("Eres adulto");
+            break;
+            case edad >= 110:
+            alert("Eres un vampiro elegante y discreto");
+            break;
+        default:
+            alert("Te has jubilado");
+        }
+    }
+</script>
+</body>
+</html>

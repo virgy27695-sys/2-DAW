@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: url(../img/background-index.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #d0a51b;
+}
+
+/* HEADER */
+header {
+    width: 100%;
+    background-color: #634f0d;
+    color: white;
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* LOGO */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    text-decoration: none;
+    color: white;
+}
+
+.logo-img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.logo-title {
+    font-size: 1.4rem;
+    color: white;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* LINKS DEL NAVBAR */
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* LOGIN */
+.login-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-left: 3rem;
+    margin-top: 120px;
+}
+
+/* FORMULARIOS OCULTOS */
+.container-form {
+    width: 400px;
+    background-color: #f5f5dc;
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease, visibility .5s ease;
+}
+
+/* FORMULARIOS ACTIVOS */
+.container-form.active {
+    opacity: 1;
+    visibility: visible;
+    display: block;
+}
+
+/* TITULO DE FORMULARIO */
+.create-account {
+    padding: 1rem 0;
+    font-size: 1.7rem;
+}
+
+.formulario input,
+.formulario button {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.formulario input {
+    background-color: transparent;
+    border-bottom: 2px solid #634f0d;
+    color: #634f0d;
+    text-align: center;
+}
+
+.formulario button {
+    padding: 1rem;
+    font-weight: 400;
+    background-color: #d0a51b;
+    border-radius: 2rem;
+    border: 1px solid #f5f5dc;
+    outline: none;
+    cursor: pointer;
+    font-size: .9rem;
+    margin-top: 2rem;
+    transition: all .3s ease-in;
+    color: #634f0d;
+}
+
+.formulario button:hover {
+    background-color: #c49b14;
+}
+
+/* FOOTER */
+footer {
+    width: 100%;
+    background-color: #634f0d;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+/* ADMINISTRADOR: Estilos para la página de administración */
+#tabla-usuarios {
+    width: 80%;
+    margin: 2rem auto;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#tabla-usuarios th,
+#tabla-usuarios td {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+#tabla-usuarios th {
+    background-color: #634f0d;
+    color: white;
+}
+
+#tabla-usuarios td {
+    color: #634f0d;
+}
+
+/* Estilo de los botones en la tabla (Cambiar Rol) */
+#tabla-usuarios button {
+    background-color: #d0a51b;
+    color: #634f0d;
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    border-radius: 2rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#tabla-usuarios button:hover {
+    background-color: #c49b14;
+}
+
+/* RESPONSIVE: Hacer que la página se vea bien en dispositivos móviles */
+@media (max-width: 600px) {
+
+    /* Ajuste en la tabla de administración */
+    #tabla-usuarios {
+        width: 90%;
+        margin: 1rem auto;
+    }
+
+    #tabla-usuarios th,
+    #tabla-usuarios td {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .logo-img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .logo-title {
+        font-size: 1.2rem;
+    }
+
+    /* Hacer los botones más grandes en pantallas pequeñas */
+    #tabla-usuarios button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1.1rem;
+    }
+
+    /* Formularios de login más pequeños */
+    .container-form {
+        width: 90%;
+    }
+
+    .login-wrapper {
+        padding-right: 1rem;
+    }
+
+    .logo-title {
+        font-size: 1.2rem;
+    }
+}

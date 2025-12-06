@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="formulario.js"></script>
+</head>
+<body>
+    <body>
+    <form id="bolsasForm">
+        <label>Fecha de Creación:
+            <input type="text" id="fechaCreacion" placeholder="dd/mm/aaaa">
+        </label>
+        <br>
+        
+        <label>Cocinero:
+            <input type="text" id="cocinero" placeholder="Ej. WW$1234">
+        </label>
+        <br>
+        
+        <label>Destinatario:
+            <input type="text" id="destinatario" placeholder="Ej. NM_alburquerque:1234">
+        </label>
+        <br>
+        
+        <label>Gramos:
+            <input type="number" id="gramos" min="100" max="5000">
+        </label>
+        <br>
+        
+        <label>Composición:
+            <input type="text" id="composicion" placeholder="Ej. 200gC3OH7">
+        </label>
+        <br>
+        
+        <label>Número de Cuenta EEUU:
+            <input type="text" id="numCuenta" placeholder="Ej. AB12-123456789012-34">
+            <input type="text" id="numCuentaSinGuiones" readonly>
+        </label>
+        <br>
+        
+        <button type="submit">Validar</button>
+    </form>
+
+</body>
+</html>

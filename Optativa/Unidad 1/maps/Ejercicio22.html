@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 22</title>
+</head>
+
+<body>
+    <!-- Utiliza filter para filtrar los números consecutivos que estén
+repetidos. Por ejemplo: [ 3, 3, 3, 4, 3, 3 ] resultará en [ 3, 4, 3 ] .
+Nota: Para saber si un elemento está repetido, debe compararse con
+array[index-1] . Observa que está el caso especial en el que index sea igual
+a 0 , en el que siempre se debe devolver true , antes de comparar, para que
+no sea filtrado-->
+<script>
+    const numeros = [3, 3, 3, 4, 3, 3];
+
+    const resultado = numeros.filter((num, index, arr) => {
+        // Siempre devolvemos true para el primer elemento
+        if (index === 0) return true;
+        // Comparamos con el elemento anterior, si es distinto lo mantenemos
+        return num !== arr[index - 1];
+    });
+
+    console.log(resultado)
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 17</title>
+</head>
+
+<body>
+    <!--Utiliza filter sobre el array de cargos (usado en el apartado de
+map ) para quedarte solo con los objetos que no tengan definido un cargo
+( undefined ).-->
+    <script>
+        const cargo = [
+            { nombre: 'Juan', edad: 25, cargo: 'Jefe' },
+            { nombre: 'Maria', edad: 30 },
+            { nombre: 'Pedro', edad: 22 }
+        ];
+        const mayoresCinco = cargo.filter(persona => persona.cargo == undefine);
+        console.log(mayoresCinco);
+    </script>
+
+
+</body>
+
+</html>

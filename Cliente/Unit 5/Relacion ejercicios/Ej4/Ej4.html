@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Discos y Visitas</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Gestión de Discos de Música</h1>
+
+        <div class="opciones">
+            <button onclick="mostrarNumeroDiscos()">Número de discos</button>
+            <button onclick="mostrarListadoDiscos()">Listado completo</button>
+            <button onclick="mostrarIntervalo()">Mostrar intervalo</button>
+            <button onclick="mostrarFormulario()">Añadir disco</button>
+            <button onclick="borrarDisco()">Borrar disco</button>
+            <button onclick="consultarDisco()">Consultar disco</button>
+        </div>
+
+
+        <div class="formulario oculto" id="formularioAgregar">
+            <h2>Añadir un nuevo disco</h2>
+            <form id="formDisco">
+                <label id="label-nombre">Nombre del disco:</label><br>
+                <input type="text" id="nombre" maxlength="20" required><br>
+
+                <label id="label-grupo">Grupo o cantante:</label><br>
+                <input type="text" id="grupo" maxlength="20" required><br>
+
+                <label id="label-ano">Año de publicación:</label><br>
+                <input type="text" id="ano" maxlength="4"><br>
+
+                <label id="label-tipo">Tipo de música:</label><br>
+                <select id="tipo">
+                    <option value="rock">Rock</option>
+                    <option value="pop">Pop</option>
+                    <option value="punk">Punk</option>
+                    <option value="indie">Indie</option>
+                </select><br>
+
+                <label id="label-localizacion">Localización (número de estantería):</label><br>
+                <input type="text" id="localizacion"><br>
+
+                <label id="label-prestado">Prestado:</label>
+                <input type="checkbox" id="prestado"><br><br>
+
+                <button type="submit">Añadir disco</button>
+            </form>
+        </div>
+
+        <div id="resultados" class="disco-lista"></div>
+
+        <hr>
+        <h2>Visitas a la web</h2>
+        <p id="contadorVisitas"></p>
+        <button onclick="borrarCookie()">Borrar cookie de visitas</button>
+
+    </div>
+
+    <script src="disco.js"></script>
+    <script src="gestion.js"></script>
+    <script src="cookies.js"></script>
+</body>
+
+</html>

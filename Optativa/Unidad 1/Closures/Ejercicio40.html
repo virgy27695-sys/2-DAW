@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 40</title>
+</head>
+
+<body>
+    <!--Haz un closure como el anterior, pero se permite invocar, tanto el
+argumento inicial como en cada una de las llamadas, con los argumentos que
+se desee.Ejemplo: inicializo el closure con un (3,1). Luego lo invoco con argumentos
+(2,2,1), lo que me devuelve 9. Luego lo llamo de nuevo, sin argumentos, lo
+que me devuelve 9. Lo invoco otra vez, con 8, y me devuelve 17.-->
+    <script>
+        function acumulado() {
+            let valorAcumulado;
+            for(let i = 0; i< arguments.length; i++){
+                valorAcumulado = arguments[i];
+            }
+            function imprimeAcumulado() {
+                for (let j = 0; arguments.length;j++){
+                    let valorfinal = valorAcumulado + arguments[j];
+                }
+                
+                console.log(valorfinal); 
+            }
+            return imprimeAcumulado; 
+        }
+        const miFuncion = acumulado(3,1); 
+        miFuncion(2,2,1); 
+    </script>
+
+
+</body>
+
+</html>

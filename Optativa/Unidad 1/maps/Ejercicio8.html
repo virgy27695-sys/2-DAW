@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8</title>
+</head>
+
+<body>
+    <!--Utiliza map para devolver un array igual a personas, pero con los
+nombres todo en mayúsculas.
+Nota: String posee un método, toUpperCase() que devuelve el mismo
+String pero en mayúsculas.-->
+    <script>
+        const personas = [
+            { nombre: 'Juan', edad: 25 },
+            { nombre: 'Maria', edad: 30 },
+            { nombre: 'Pedro', edad: 22 }
+        ];
+        const c2 = personas.map(({nombre}) =>
+            ({nombre: nombre.toUpperCase()})
+        );
+        console.log(c2);
+    </script>
+
+
+</body>
+
+</html>

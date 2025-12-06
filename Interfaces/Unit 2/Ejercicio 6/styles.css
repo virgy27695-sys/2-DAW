@@ -1,0 +1,186 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #000;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.navbar {
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+}
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-links a, .nav-links .btn {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: #000;
+}
+.nav-links .btn {
+  background: #000;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+}
+
+.hero {
+  padding: 4rem 2rem;
+}
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+.hero .text h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.hero .btn {
+  margin-top: 1rem;
+  background: #000;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+}
+.image-placeholder {
+  width: 300px;
+  height: 200px;
+  background: #f0f0f0;
+  border: 2px solid #000;
+}
+
+.trusted {
+  text-align: center;
+  padding: 2rem 0;
+}
+.trusted .logos {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.dot {
+  width: 30px;
+  height: 30px;
+  background: black;
+  border-radius: 50%;
+}
+
+.features {
+  padding: 4rem 0;
+}
+.features.dark {
+  background: #333;
+  color: #fff;
+}
+.features.light {
+  background: #f9f9f9;
+}
+.feature {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+.feature.reverse {
+  flex-direction: row-reverse;
+}
+.image-box {
+  width: 300px;
+  height: 200px;
+  background: #000;
+}
+ul {
+  list-style: none;
+  margin-top: 1rem;
+}
+ul li {
+  margin-bottom: 0.5rem;
+}
+
+.articles {
+  padding: 4rem 0;
+}
+.article-main {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+.article-main .image-box.tall {
+  width: 200px;
+  height: 250px;
+  background: #000;
+}
+.article-cards {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.card {
+  background: #eee;
+  padding: 1rem;
+  flex: 1;
+}
+
+.testimonial {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: #f9f9f9;
+}
+
+.cta {
+  background: #eee;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+.cta .btn {
+  background: #000;
+  color: white;
+  padding: 1rem 2rem;
+  margin-top: 1rem;
+  border: none;
+}
+
+.footer {
+  background: #fff;
+  border-top: 1px solid #ccc;
+  padding: 2rem;
+}
+.footer .container {
+  display: flex;
+  justify-content: space-between;
+}
+.footer .right {
+  display: flex;
+  gap: 4rem;
+}
+.footer ul {
+  list-style: none;
+  margin-top: 0.5rem;
+}
+.footer li {
+  margin-bottom: 0.25rem;
+}
+.footer h5 {
+  margin-bottom: 0.5rem;
+}
+.footer .copyright {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.875rem;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 18</title>
+</head>
+
+<body>
+    <!--Utiliza filter sobre un array de cadenas para quedarte solo con las
+cadenas que no contengan espacio.
+Nota: para saber si una cadena contiene un carácter, puede usar
+«cad».includes(«caracter») .-->
+    <script>
+        const animal = [
+            'elefante', 'computadora', 'agua',
+            'murcielago', 'oso pardo'
+        ];
+        const espacio = animal.filter(anim => !anim.includes(" "));
+        console.log(espacio);
+    </script>
+
+
+</body>
+
+</html>

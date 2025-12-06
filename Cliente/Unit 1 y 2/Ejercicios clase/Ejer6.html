@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+</head>
+<body>
+<script>
+    
+    let pregunta = ("Escribe el apellido del primer presidente de la democracia");
+    let respuesta = window.prompt(pregunta);
+    while(respuesta.toLocaleLowerCase() !== "suarez"){
+        console.log("Respuesta incorrecta. Intentalo de nuevo. \nEscribe el apellido del primer presidente de la democracia");
+        respuesta = window.prompt(pregunta);
+    }
+    alert("Puedes acceder a la aplicación");
+
+</script>
+</body>
+</html>

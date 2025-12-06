@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Bingo</title>
+    <script src="bingo.js" defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        #card {
+            display: grid;
+            grid-template-columns: repeat(5, 80px);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        #card div {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+            font-size: 20px;
+        }
+        #drawnNumbers {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Juego de Bingo</h1>
+
+    <!-- Cartón de bingo -->
+    <div id="card"></div>
+
+    <!-- Números sorteados -->
+    <div id="drawnNumbers"></div>
+</body>
+</html>
+
+

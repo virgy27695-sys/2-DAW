@@ -1,0 +1,59 @@
+/* 1. Todos los <p> que son hermanos adyacentes de otro <p> deben tener color verde */
+p + p {
+  color: green;
+}
+
+/*  2. Clase text-indent: primera línea con indentación de 30px */
+.text-indent {
+  text-indent: 30px;
+}
+
+/*  3. Clase text-align: alinear texto a la derecha */
+.text-align {
+  text-align: right;
+}
+
+/*  4. Clase text-decoration: subrayado */
+.text-decoration {
+  text-decoration: underline;
+}
+
+/*  5. Clase letter-spacing: espacio entre letras de 3px */
+.letter-spacing {
+  letter-spacing: 3px;
+}
+
+/*  6. Clase word-spacing: espacio entre palabras de 10px */
+.word-spacing {
+  word-spacing: 10px;
+}
+
+/*  7. Clase text-transform: texto en mayúsculas */
+.text-transform {
+  text-transform: uppercase;
+}
+
+/*  8. Clase line-height: altura entre líneas de 70px */
+.line-height {
+  line-height: 70px;
+}
+
+/*  9. Estilo general para <td>: altura y borde */
+td {
+  height: 100px;
+  border: 1px solid grey;
+}
+
+/* ✅ 10. Alineación vertical por clase */
+td.a {
+  vertical-align: top;
+}
+
+td.b {
+  vertical-align: middle;
+}
+
+td.c {
+  vertical-align: bottom;
+}
+

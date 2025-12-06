@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+<body>
+<script>
+    
+    let respuesta = prompt("¿Cuantos años tienes?");
+    let edad = Number(respuesta);
+    if(isNaN(respuesta)){
+        alert("Has de poner un número");
+    } else if(edad < 0){
+        alert("Error");
+    } else if(edad >=12){
+        alert("Eres un niño");
+    }else if(edad >=26){
+        alert("Eres joven");
+    }else if(edad >= 67){
+        alert("Eres adulto");
+    } else{
+        alert("Te has jubilado");
+    }
+</script>
+</body>
+</html>

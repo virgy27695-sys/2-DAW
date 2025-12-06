@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 23</title>
+</head>
+
+<body>
+    <!-- Dado un array de números, obtén otro array con los valoreas
+absolutos de los números negativos, descartando los que originalmente eran
+positivos. Por ejemplo, para el array de entrada [ 5, -3, 8, -10, 12, -6,
+7 ] , se obtendrá [ 3, 10, 6] .-->
+<script>
+     const numeros = [5, -3, 8, -10, 12, -6, 7];
+
+    const resultado = numeros
+        .filter(num => num < 0)// selecciona solo negativos
+        .map(num => -num);// convierte negativos a positivos
+
+    console.log(resultado);
+</script>
+
+
+</body>
+
+</html>

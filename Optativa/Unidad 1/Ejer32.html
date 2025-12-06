@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 32</title>
+</head>
+
+<body>
+    <script>
+        document.write("<pre>");
+        let pregunta = ("Escribe un número");
+        let num = Number(window.prompt(pregunta));
+        for (let i = 0; i < num; i++) {
+            for (let j = 0; j < num; j++) {
+                if (i == 0 || i == num -1 || j == 0 || j == num -1 ) {
+                    document.write("*");
+                } else {
+                    document.write(" ");
+                }
+            }
+            document.write("</br>");
+        }
+        document.write("</pre>");
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11</title>
+</head>
+
+<body>
+    <!--Define una función anónima que devuelva el número de letras que
+suman todas las cadenas pasadas por argumento. Tendrás que hacer un bucle
+y usar arguments .-->
+    <script>
+        const contar = (function() {
+            let contador = 0;
+            for(let i = 0; i <arguments.length; i++){
+                contador = arguments[i];
+                
+            }
+        });
+        let resultado = contar("Hola", "que");
+        console.log(contador);
+
+    </script>
+
+
+</body>
+
+</html>

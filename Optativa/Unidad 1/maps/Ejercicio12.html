@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 12</title>
+</head>
+
+<body>
+    <!--Utiliza map para, a partir de un array de cadenas que contienen
+nombres, devolver un array de objetos, que contendrán, cada uno, un atributo
+de nombre y un atributo llamado id con valor numérico consecutivo,
+empezando por 1 .
+Por ejemplo, si el array inicial es [‘Juan’, ‘María’, ‘Jose’] , devolverá
+[{nombre:‘Juan’, id:1}, {nombre:‘Juan’, id:2}, {nombre:‘Juan’,
+id:3} ] -->
+    <script>
+        const personas = [
+            'Juan','Maria', 'Jose'];
+        const c2 = personas.map((elem,index,arr)  => ({nombre:elem,id:index+1}));
+        console.log(c2);
+    </script>
+
+
+</body>
+
+</html>

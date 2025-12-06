@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utilidades - Asociación Deportiva</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <p id="fecha-actual"></p>
+        <h1>Utilidades</h1>
+        <nav>
+            <ul>
+                <li><a href="proyecto.html">Inicio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Selecciona una utilidad</h2>
+
+        <div class="botonera">
+            <button onclick="mostrarSeccion('fcm')">Calculadora FCM</button>
+            <button onclick="mostrarSeccion('categoria')">Calculadora Categoría</button>
+            <button onclick="mostrarSeccion('horario')">Horario Asociación</button>
+        </div>
+
+        <!-- Sección FCM -->
+        <section id="seccion-fcm" class="form-container seccion-oculta">
+            <h3>Calculadora de Frecuencia Cardíaca Máxima</h3>
+            <label for="edadFCM">Edad:</label>
+            <input type="number" id="edadFCM" min="1" max="120" required>
+
+            <label for="sexoFCM">Sexo:</label>
+            <select id="sexoFCM">
+                <option value="">Selecciona...</option>
+                <option value="H">Hombre</option>
+                <option value="M">Mujer</option>
+            </select>
+
+            <button onclick="calcularFCM()">Calcular</button>
+        </section>
+
+        <!-- Sección Categoría -->
+        <section id="seccion-categoria" class="form-container seccion-oculta">
+            <h3>Calculadora de Categoría</h3>
+            <label for="anoNacimiento">Año de nacimiento:</label>
+            <input type="number" id="anoNacimiento" min="1900" max="2025" required>
+            <button onclick="calcularCategoria()">Calcular</button>
+        </section>
+
+        <!-- Sección Horario -->
+        <section id="seccion-horario" class="form-container seccion-oculta">
+            <h3>Horario de la Asociación</h3>
+            <button onclick="mostrarHorario()">Mostrar horario</button>
+        </section>
+
+        <div id="contenido"></div>
+    </main>
+
+    <footer>
+        <p>&copy; Asociación Deportiva IES Virgen del Carmen</p>
+        <p>Web desarrollada por: Virginia Molina Bellido</p>
+        <p><a href="https://www.afdalava.com/aviso-legal/" target="_blank">Aviso legal</a></p>
+    </footer>
+
+    <script src="proyecto.js"></script>
+</body>
+</html>

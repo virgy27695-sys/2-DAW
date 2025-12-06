@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9</title>
+</head>
+
+<body>
+    <!--Utiliza map para, a partir de un array de cadenas que contienen
+nombres, devolver un array de objetos, que contendrán, cada uno, un atributo
+de nombre y un atributo llamado id con valor 0 Por ejemplo, si el array inicial es ['Juan', 'María’, 'Jose'] , devolverá
+[{nombre:'Juan', id:0}, {nombre:'Juan', id:0}, {nombre:'Juan',
+id:0} ] .-->
+    <script>
+        const personas = [
+            { nombre: 'Juan', edad: 25 },
+            { nombre: 'Maria', edad: 30 },
+            { nombre: 'Pedro', edad: 22 }
+        ];
+        const c2 = personas.map(({nombre, id}) =>
+            ({nombre: nombre, id: 0})
+        );
+        console.log(c2);
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+</head>
+<body>
+<script>
+    
+    let pregunta = ("Escribe el nombre y apellido del primer presidente de la democracia Española");
+    let respuesta = window.prompt(pregunta).trim();
+    while(respuesta.toLocaleLowerCase() !== "adolfo suarez"){
+        if(respuesta.toLocaleLowerCase() === "adolfo"){
+            respuesta = prompt("Te falta el apellido.\nEscribe el apellido del primer presidente de la democracia");
+        }else if(respuesta.toLocaleLowerCase() === "suarez"){
+            respuesta = prompt("Te falta el nombre.\nEscribe el apellido del primer presidente de la democracia");
+        }else{
+            respuesta = prompt("Error. Intentalo de nuevo. \nEscribe el apellido del primer presidente de la democracia");
+        }
+    }
+    alert("Puedes acceder a la aplicación");
+
+</script>
+</body>
+</html>

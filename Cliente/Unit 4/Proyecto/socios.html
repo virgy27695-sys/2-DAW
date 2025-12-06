@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Socios - Asociación Deportiva</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <p id="fecha-actual"></p>
+        <h1>Gestión de Socios</h1>
+        <nav>
+            <ul>
+                <li><a href="proyecto.html">Inicio</a></li>
+                <li><a href="utilidades.html">Utilidades</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Gestión de Socios</h2>
+
+        <!-- Botones principales -->
+        <div class="botonera">
+            <button onclick="mostrarSeccion('alta')">Alta de socio</button>
+            <button onclick="mostrarSeccion('baja')">Baja de socio</button>
+            <button onclick="mostrarSeccion('buscar')">Buscar socio</button>
+            <button onclick="mostrarSeccion('mostrar')">Mostrar socios</button>
+        </div>
+
+        <!-- Formulario Alta -->
+        <section id="seccion-alta" class="form-container seccion-oculta">
+            <h3>Alta de Socio</h3>
+            <form id="form-socio">
+                <label for="numSocio">Número de Socio:</label>
+                <input type="number" id="numSocio" required>
+
+                <label for="dni">DNI:</label>
+                <input type="text" id="dni" required>
+
+                <label for="nombreSocio">Nombre:</label>
+                <input type="text" id="nombreSocio" required>
+
+                <label for="apellidosSocio">Apellidos:</label>
+                <input type="text" id="apellidosSocio" required>
+
+                <label for="fechaNacimientoSocio">Fecha de nacimiento:</label>
+                <input type="date" id="fechaNacimientoSocio" required>
+
+                <label for="localidadSocio">Localidad:</label>
+                <input type="text" id="localidadSocio" required>
+
+                <button type="button" onclick="altaSocio()">Dar de alta</button>
+            </form>
+        </section>
+
+        <!-- Formulario Baja -->
+        <section id="seccion-baja" class="form-container seccion-oculta">
+            <h3>Baja de Socio</h3>
+            <label for="bajaDato">Introduce Nº de socio o DNI:</label>
+            <input type="text" id="bajaDato">
+            <button onclick="bajaSocio()">Dar de baja</button>
+        </section>
+
+        <!-- Formulario Buscar -->
+        <section id="seccion-buscar" class="form-container seccion-oculta">
+            <h3>Buscar Socio</h3>
+            <label for="busquedaDato">Introduce DNI o nombre/apellidos:</label>
+            <input type="text" id="busquedaDato">
+            <button onclick="buscarSocio()">Buscar</button>
+        </section>
+
+        <!-- Formulario Mostrar -->
+        <section id="seccion-mostrar" class="form-container seccion-oculta">
+            <h3>Mostrar Socios</h3>
+            <button onclick="mostrarTodosSocios()">Mostrar todos</button>
+
+            <h4>Buscar por Categoría</h4>
+            <select id="categoriaBusqueda">
+                <option value="Infantil">Infantil</option>
+                <option value="Cadete">Cadete</option>
+                <option value="Juvenil">Juvenil</option>
+                <option value="Senior">Senior</option>
+            </select>
+            <button onclick="buscarPorCategoria()">Buscar por categoría</button>
+
+            <h4>Buscar por Localidad</h4>
+            <input type="text" id="localidadBusqueda" placeholder="Introduce localidad">
+            <button onclick="buscarPorLocalidad()">Buscar</button>
+        </section>
+
+        <div id="resultadoSocios"></div>
+    </main>
+
+    <footer>
+        <p>&copy; Asociación Deportiva IES Virgen del Carmen</p>
+        <p>Web desarrollada por: Virginia Molina Bellido</p>
+    </footer>
+
+    <script src="proyecto.js"></script>
+</body>
+</html>
+
+
