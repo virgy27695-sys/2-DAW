@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    flex-direction: column;
+    color: #d0a51b;
+}
+
+/* HEADER */
+header {
+    width: 100%;
+    background-color: #634f0d;
+    color: white;
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* LOGO */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    text-decoration: none;
+    color: white;
+}
+
+.logo-img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.logo-title {
+    font-size: 1.4rem;
+    color: white;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* LINKS DEL NAVBAR */
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* FOOTER */
+footer {
+    width: 100%;
+    background-color: #634f0d;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    margin-top: auto;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+
+.container-form, .tabla-usuarios {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.container-form.active, .tabla-usuarios.active {
+    opacity: 1;
+    visibility: visible;
+}

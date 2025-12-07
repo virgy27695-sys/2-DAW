@@ -1,0 +1,63 @@
+ body {
+    background: url(../img/background_comun.jpg) no-repeat center center;
+    background-size: cover;
+}
+/* TABLA ADMIN */
+#tabla-usuarios {
+    width: 80%;
+    margin: 2rem auto;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#tabla-usuarios th,
+#tabla-usuarios td {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+#tabla-usuarios th {
+    background-color: #634f0d;
+    color: white;
+}
+
+#tabla-usuarios td {
+    color: #634f0d;
+}
+
+/* Botones de la tabla */
+#tabla-usuarios button {
+    background-color: #d0a51b;
+    color: #634f0d;
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    border-radius: 2rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#tabla-usuarios button:hover {
+    background-color: #c49b14;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    #tabla-usuarios {
+        width: 90%;
+        margin: 1rem auto;
+    }
+
+    #tabla-usuarios th,
+    #tabla-usuarios td {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    #tabla-usuarios button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1.1rem;
+    }
+}

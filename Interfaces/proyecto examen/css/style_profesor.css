@@ -1,0 +1,39 @@
+ body {
+    background: url(../img/background-teacher.jpg) no-repeat center center;
+    background-size: cover;
+     color: #111111;
+}
+/* FORMULARIOS DEL PROFESOR */
+.formulario input,
+.formulario select,
+.formulario button {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.7rem;
+    border-radius: 5px;
+    border: 1px solid #634f0d;
+    font-size: 1rem;
+}
+
+#contPreguntas label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.nav-profesor {
+    margin: 120px auto 1rem;
+    text-align: center;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-profesor button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.nav-profesor button:hover {
+    background-color: #c49b14;
+    color: #fff;
+}
