@@ -1,9 +1,8 @@
-// Definir la clase Persona
 class Persona {
     constructor() {
         this.nombre = '';
         this.contrasena = '';
-        this.rol = ''; 
+        this.rol = '';
         this.validado = false;
     }
 
@@ -16,11 +15,11 @@ class Persona {
         this.rol = rol;
     }
 
-    // Método validar usuario
-    validarUsuario(validado) {
-        this.validado = validado;
+    validarUsuario(valor) {
+        this.validado = valor;
     }
 }
+
 
 
 

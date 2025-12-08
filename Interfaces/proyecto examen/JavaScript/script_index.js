@@ -1,12 +1,9 @@
 window.addEventListener('DOMContentLoaded', function () {
-    // Obtener los elementos del DOM
     const btnSignIn = document.querySelector('.sign-in-btn');
     const btnSignUp = document.querySelector('.sign-up-btn');
     const signUpForm = document.querySelector('.sign-up');
     const signInForm = document.querySelector('.sign-in');
 
-
-    // Evento para alternar entre los formularios de inicio de sesión y registro
     document.addEventListener('click', function (e) {
         if (e.target === btnSignIn) {
             signInForm.classList.add('active');
@@ -18,51 +15,58 @@ window.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    
-    // Obtener los usuarios guardados en localStorage o inicializar uno vacío
     let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+
     if (usuarios.length === 0) {
         let usuarioPredeterminado = new Persona();
         usuarioPredeterminado.incluirDatos("root", "root");
         usuarioPredeterminado.asignarRol("Administrador");
+        usuarioPredeterminado.validado = true;
         usuarios.push(usuarioPredeterminado);
         localStorage.setItem('usuarios', JSON.stringify(usuarios));
     }
 
-
-    // Función de inicio de sesión
     document.getElementById('form-login').onsubmit = function (event) {
         event.preventDefault();
 
         let nombreUsuario = document.getElementById('nombre-login').value.trim();
         let contrasenaLogin = document.getElementById('password-login').value.trim();
 
-        let usuarioEncontrado = usuarios.find(user => user.nombre === nombreUsuario && user.contrasena === contrasenaLogin);
+        let usuarioEncontrado = null;
 
-        // Validación de inicio de sesión
-        if (usuarioEncontrado !== undefined) {
-            console.log("Usuario logueado correctamente:", usuarioEncontrado);
+        for (let i = 0; i < usuarios.length; i++) {
+            if (usuarios[i].nombre === nombreUsuario && usuarios[i].contrasena === contrasenaLogin) {
+                usuarioEncontrado = usuarios[i];
+                break;
+            }
+        }
+
+        if (usuarioEncontrado !== null) {
+
+            if (!usuarioEncontrado.validado) {
+                alert("Tu cuenta aún no ha sido validada por un administrador.");
+                return;
+            }
+
             localStorage.setItem('usuariologueado', JSON.stringify(usuarioEncontrado));
-            // Redirigir según el rol
+
             switch (usuarioEncontrado.rol) {
                 case "Administrador":
-                    window.location.href = "administrador.html";  // Página para administrar usuarios
+                    window.location.href = "administrador.html";
                     break;
                 case "Profesor":
-                    window.location.href = "profesor.html";  // Página para el profesor
+                    window.location.href = "profesor.html";
                     break;
                 case "Alumno":
-                    window.location.href = "alumno.html";  // Página para el alumno
+                    window.location.href = "alumno.html";
                     break;
-                default:
-                    console.log("Rol no válido");
             }
+
         } else {
             alert("Usuario o contraseña incorrectos");
         }
     };
 
-    // Función para añadir un nuevo usuario
     document.getElementById('form-register').addEventListener("submit", function (event) {
         event.preventDefault();
 
@@ -70,59 +74,48 @@ window.addEventListener('DOMContentLoaded', function () {
         let contrasena = document.getElementById('password-register').value.trim();
         let confirmarContrasena = document.getElementById('confirm-password-register').value.trim();
 
-        // Verificar si las contraseñas coinciden
-
         function validarContrasena() {
             if (contrasena !== confirmarContrasena) {
                 alert("Las contraseñas no coinciden.");
                 return false;
             }
-
             if (contrasena.length < 8 || contrasena.length > 16) {
                 alert("La contraseña debe tener entre 8 y 16 caracteres.");
                 return false;
             }
-
             if (!(/[A-Z]/.test(contrasena))) {
                 alert("Debe contener al menos una letra mayúscula.");
                 return false;
             }
-
             if (!(/[a-z]/.test(contrasena))) {
                 alert("Debe contener al menos una letra minúscula.");
                 return false;
             }
-
             if (!(/\d/.test(contrasena))) {
                 alert("Debe contener al menos un número.");
                 return false;
             }
-
             if (!(/[-_@#$%&]/.test(contrasena))) {
                 alert("Debe contener al menos un carácter especial.");
                 return false;
             }
-
             return true;
         }
-        if (validarContrasena()) {
 
-            // Crear nuevo usuario solo si las contraseñas coinciden
+        if (validarContrasena()) {
             let nuevoUsuario = new Persona();
             nuevoUsuario.incluirDatos(nombreUsuario, contrasena);
-
-            // Asignar "Alumno" por defecto.
             nuevoUsuario.asignarRol("Alumno");
+            nuevoUsuario.validado = false;
 
-            // Agregar el nuevo usuario 
             usuarios.push(nuevoUsuario);
             localStorage.setItem('usuarios', JSON.stringify(usuarios));
 
-            console.log('Nuevo usuario creado:', nuevoUsuario);
             alert('Usuario registrado correctamente');
         }
     });
 });
+
 
 
 

@@ -1,196 +1,196 @@
-window.addEventListener('DOMContentLoaded', function () {
-    // -------------------
-    // DATOS PRINCIPALES
-    // -------------------
-    let preguntas = JSON.parse(localStorage.getItem('preguntas')) || [];
-    let examenes = JSON.parse(localStorage.getItem('examenes')) || [];
-    let intentos = JSON.parse(localStorage.getItem('intentos')) || [];
-    const usuarioLogueado = JSON.parse(localStorage.getItem('usuariologueado'));
+window.addEventListener("DOMContentLoaded", function(){
+    let preguntas = JSON.parse(localStorage.getItem("preguntas")) || [];
+    let categorias = JSON.parse(localStorage.getItem("categorias")) || [];
 
-    if (!usuarioLogueado || (usuarioLogueado.rol !== 'Profesor' && usuarioLogueado.rol !== 'Administrador')) {
-    alert("Acceso no autorizado. Solo profesores o administradores pueden ver esta página.");
-    window.location.href = "index.html";
-    return;
-}
+    const formPregunta = document.getElementById("formPregunta");
+    const formExamen   = document.getElementById("formExamen");
+    const resultados   = document.getElementById("resultados");
+    const banco        = document.getElementById("banco");
 
-    // -------------------
-    // ELEMENTOS DEL DOM
-    // -------------------
-    const formPregunta = document.getElementById('formPregunta');
-    const formExamen = document.getElementById('formExamen');
-    const tablaResultados = document.getElementById('tablaResultados');
-    const contPreguntas = document.getElementById('contPreguntas');
-
-    const btnCrearPregunta = document.getElementById('btnCrearPregunta');
-    const btnGenerarExamen = document.getElementById('btnGenerarExamen');
-    const btnVerResultados = document.getElementById('btnVerResultados');
-
-    const inputPregunta = document.getElementById('inputPregunta');
-    const inputR1 = document.getElementById('inputR1');
-    const inputR2 = document.getElementById('inputR2');
-    const inputR3 = document.getElementById('inputR3');
-    const selectCorrecta = document.getElementById('selectCorrecta');
-    const inputCategoria = document.getElementById('inputCategoria');
-    const selectDificultad = document.getElementById('selectDificultad');
-
-    const inputNombreExamen = document.getElementById('inputNombreExamen');
-    const inputFechaExamen = document.getElementById('inputFechaExamen');
-    const inputCatFiltro = document.getElementById('inputCatFiltro');
-    const selectDifFiltro = document.getElementById('selectDifFiltro');
-
-    const tbodyResultados = tablaResultados.querySelector('tbody');
+    const btnCrear      = document.getElementById("btnCrear");
+    const btnExamen     = document.getElementById("btnExamen");
+    const btnResultados = document.getElementById("btnResultados");
+    const btnBanco      = document.getElementById("btnBanco");
 
 
-    // FUNCIONES AUXILIARES
-    function ocultarSecciones() {
-        formPregunta.classList.remove('active');
-        formExamen.classList.remove('active');
-        tablaResultados.classList.remove('active');
+    // OCULTAR TODO
+
+    function ocultar(){
+        formPregunta.classList.remove("active");
+        formExamen.classList.remove("active");
+        resultados.classList.remove("active");
+        banco.classList.remove("active");
     }
 
-    function actualizarCheckboxPreguntas() {
-        // Limpiar contenedor
-        while (contPreguntas.firstChild) contPreguntas.removeChild(contPreguntas.firstChild);
+    // MOSTRAR FORM CREAR
 
-        const filtroCat = inputCatFiltro.value.toLowerCase();
-        const filtroDif = selectDifFiltro.value;
+    function mostrarCrear(){
+        ocultar();
+        formPregunta.classList.add("active");
+    }
 
-        for (let i = 0; i < preguntas.length; i++) {
-            const p = preguntas[i];
-            if ((!filtroCat || p.categoria.toLowerCase() === filtroCat) &&
-                (!filtroDif || p.dificultad === filtroDif)) {
 
-                const label = document.createElement('label');
-                const cb = document.createElement('input');
-                cb.type = 'checkbox';
-                cb.dataset.index = i;
+    // CARGAR CATEGORIAS
 
-                label.appendChild(cb);
-                label.appendChild(document.createTextNode(` ${p.pregunta} [${p.categoria}, ${p.dificultad}]`));
-                contPreguntas.appendChild(label);
-                contPreguntas.appendChild(document.createElement('br'));
-            }
+    function cargarCategorias(){
+        const select = document.getElementById("categoria");
+
+        while(select.firstChild){
+            select.removeChild(select.firstChild);
         }
-    }
 
-    function mostrarResultados() {
-        while (tbodyResultados.firstChild) tbodyResultados.removeChild(tbodyResultados.firstChild);
-
-        for (let i = 0; i < intentos.length; i++) {
-            const intento = intentos[i];
-            const fila = document.createElement('tr');
-
-            const tdAlumno = document.createElement('td');
-            tdAlumno.textContent = intento.alumno;
-            fila.appendChild(tdAlumno);
-
-            const tdExamen = document.createElement('td');
-            tdExamen.textContent = intento.examen;
-            fila.appendChild(tdExamen);
-
-            const tdCorrectas = document.createElement('td');
-            tdCorrectas.textContent = intento.correctas.filter(x => x === true).length + '/' + intento.correctas.length;
-            fila.appendChild(tdCorrectas);
-
-            const tdDetalles = document.createElement('td');
-            const btnDet = document.createElement('button');
-            btnDet.textContent = 'Ver';
-            btnDet.addEventListener('click', function () {
-                let texto = 'Respuestas del alumno:\n';
-                for (let j = 0; j < intento.respuestasAlumno.length; j++) {
-                    texto += `Pregunta ${j + 1}: ${intento.respuestasAlumno[j]}, ${intento.correctas[j] ? 'Correcta' : 'Incorrecta'}\n`;
-                }
-                alert(texto);
-            });
-            tdDetalles.appendChild(btnDet);
-            fila.appendChild(tdDetalles);
-
-            tbodyResultados.appendChild(fila);
-        }
-    }
-
-    // EVENTOS
-
-
-    // Navegación
-    btnCrearPregunta.addEventListener('click', function () {
-        ocultarSecciones();
-        formPregunta.classList.add('active');
-    });
-
-    btnGenerarExamen.addEventListener('click', function () {
-        ocultarSecciones();
-        formExamen.classList.add('active');
-        actualizarCheckboxPreguntas();
-    });
-
-    btnVerResultados.addEventListener('click', function () {
-        ocultarSecciones();
-        tablaResultados.classList.add('active');
-        mostrarResultados();
-    });
-
-    // Crear pregunta
-    formPregunta.addEventListener('submit', function (e) {
-        e.preventDefault();
-        preguntas.push({
-            pregunta: inputPregunta.value,
-            respuestas: [inputR1.value, inputR2.value, inputR3.value],
-            correcta: selectCorrecta.value,
-            categoria: inputCategoria.value,
-            dificultad: selectDificultad.value
+        categorias.forEach(cat => {
+            let opt = document.createElement("option");
+            opt.value = cat;
+            opt.textContent = cat;
+            select.appendChild(opt);
         });
-        localStorage.setItem('preguntas', JSON.stringify(preguntas));
+    }
 
-        // Limpiar formulario
-        inputPregunta.value = '';
-        inputR1.value = '';
-        inputR2.value = '';
-        inputR3.value = '';
-        inputCategoria.value = '';
-        selectCorrecta.value = '0';
-        selectDificultad.value = 'INICIAL';
+    // CARGAR CATEGORIAS
 
-        actualizarCheckboxPreguntas();
-        alert('Pregunta creada correctamente');
-    });
+    function cargarCategoriasExamen(){
+        const select = document.getElementById("filtroCategoria");
 
-    // Generar examen
-    formExamen.addEventListener('submit', function (e) {
+        while(select.firstChild){
+            select.removeChild(select.firstChild);
+        }
+
+        let optTodas = document.createElement("option");
+        optTodas.value = "";
+        optTodas.textContent = "Todas";
+        select.appendChild(optTodas);
+
+        categorias.forEach(cat => {
+            let opt = document.createElement("option");
+            opt.value = cat;
+            opt.textContent = cat;
+            select.appendChild(opt);
+        });
+    }
+
+    // MOSTRAR BANCO
+
+    function mostrarBanco(){
+        const tbody = document.querySelector("#tablaBanco tbody");
+
+        while(tbody.firstChild){
+            tbody.removeChild(tbody.firstChild);
+        }
+
+        preguntas.forEach((p,i) => {
+
+            let tr = document.createElement("tr");
+
+            let td1 = document.createElement("td");
+            td1.textContent = p.pregunta;
+
+            let td2 = document.createElement("td");
+            td2.textContent = p.categoria;
+
+            let td3 = document.createElement("td");
+            td3.textContent = p.dificultad;
+
+            let td4 = document.createElement("td");
+
+            let btn = document.createElement("button");
+            btn.textContent = "Borrar";
+
+            btn.onclick = function(){
+                if(confirm("Eliminar pregunta?")){
+                    preguntas.splice(i,1);
+                    localStorage.setItem("preguntas", JSON.stringify(preguntas));
+                    mostrarBanco();
+                }
+            };
+
+            td4.appendChild(btn);
+
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tr.appendChild(td3);
+            tr.appendChild(td4);
+
+            tbody.appendChild(tr);
+
+        });
+    }
+
+    // GUARDAR PREGUNTA
+
+    formPregunta.onsubmit = function(e){
         e.preventDefault();
-        const nombre = inputNombreExamen.value;
-        const fecha = inputFechaExamen.value;
-        const checkboxes = contPreguntas.querySelectorAll('input[type="checkbox"]');
-        const preguntasSeleccionadas = [];
 
-        for (let i = 0; i < checkboxes.length; i++) {
-            if (checkboxes[i].checked) {
-                preguntasSeleccionadas.push(preguntas[parseInt(checkboxes[i].dataset.index)]);
+        let pregunta = document.getElementById("pregunta").value;
+
+        let r1 = document.getElementById("r1").value;
+        let r2 = document.getElementById("r2").value;
+        let r3 = document.getElementById("r3").value;
+
+        let correcta = document.getElementById("correcta").value;
+
+        let categoria = document.getElementById("categoria").value;
+
+        let nueva = document.getElementById("nuevaCategoria").value;
+
+        if(nueva.trim() !== ""){
+            categoria = nueva;
+
+            if(!categorias.includes(nueva)){
+                categorias.push(nueva);
             }
+
+            localStorage.setItem("categorias", JSON.stringify(categorias));
+
+            cargarCategorias();
+            cargarCategoriasExamen();
         }
 
-        if (!nombre || !fecha || preguntasSeleccionadas.length === 0) {
-            alert('Completa todos los campos y selecciona al menos una pregunta');
-            return;
-        }
+        let dificultad = document.getElementById("dificultad").value;
 
-        examenes.push({ nombre, fecha, preguntas: preguntasSeleccionadas });
-        localStorage.setItem('examenes', JSON.stringify(examenes));
-        alert('Examen generado correctamente');
+        preguntas.push({
+            pregunta,
+            respuestas:[r1,r2,r3],
+            correcta,
+            categoria,
+            dificultad
+        });
 
-        // Limpiar formulario
-        inputNombreExamen.value = '';
-        inputFechaExamen.value = '';
-        inputCatFiltro.value = '';
-        selectDifFiltro.value = '';
-        actualizarCheckboxPreguntas();
-    });
+        localStorage.setItem("preguntas", JSON.stringify(preguntas));
 
-    // Actualizar preguntas según filtros
-    inputCatFiltro.addEventListener('input', actualizarCheckboxPreguntas);
-    selectDifFiltro.addEventListener('change', actualizarCheckboxPreguntas);
+        alert("Pregunta guardada");
+
+        e.target.reset();
+
+        mostrarCrear();
+    };
+
+    // BOTONES
+
+    btnCrear.onclick = function(){
+        mostrarCrear();
+    };
+
+    btnExamen.onclick = function(){
+        ocultar();
+        formExamen.classList.add("active");
+        cargarCategoriasExamen();
+    };
+
+    btnResultados.onclick = function(){
+        ocultar();
+        resultados.classList.add("active");
+    };
+
+    btnBanco.onclick = function(){
+        ocultar();
+        banco.classList.add("active");
+        mostrarBanco();
+    };
+
+    // INICIO
+    cargarCategorias();
+    cargarCategoriasExamen();
+    mostrarCrear();
 
 });
-
-
-

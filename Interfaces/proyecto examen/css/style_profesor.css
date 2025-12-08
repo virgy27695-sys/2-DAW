@@ -1,39 +1,111 @@
- body {
-    background: url(../img/background-teacher.jpg) no-repeat center center;
+/* FONDO */
+body {
+    background: url("../img/background-teacher.jpg") no-repeat center center fixed;
     background-size: cover;
-     color: #111111;
-}
-/* FORMULARIOS DEL PROFESOR */
-.formulario input,
-.formulario select,
-.formulario button {
-    width: 100%;
-    margin-bottom: 1rem;
-    padding: 0.7rem;
-    border-radius: 5px;
-    border: 1px solid #634f0d;
-    font-size: 1rem;
+
+    color:#111;
+
+    padding-top:150px;
 }
 
-#contPreguntas label {
-    display: block;
-    margin-bottom: 0.5rem;
-}
 
+
+/* BOTONES */
 .nav-profesor {
-    margin: 120px auto 1rem;
-    text-align: center;
-    display: flex;
-    gap: 1rem;
+    display:flex;
+    justify-content:center;
+    gap:10px;
+
+    margin-bottom:20px;
 }
 
 .nav-profesor button {
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    cursor: pointer;
+    padding:6px 12px;
+    font-size:16px;
+    cursor:pointer;
 }
 
 .nav-profesor button:hover {
-    background-color: #c49b14;
-    color: #fff;
+    background:#c49b14;
+    color:#fff;
+}
+
+
+
+/* FORMULARIOS */
+.container-form {
+    width:400px;
+    background:rgba(245,245,220,0.9);
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 0 12px rgba(0,0,0,.2);
+    position:absolute;
+    left:50%;
+    top:220px;
+    transform:translateX(-50%);
+    opacity:0;
+    visibility:hidden;
+    transition:opacity .3s ease;
+}
+.container-form table {
+    width:100%;
+    display:table;
+    table-layout:fixed;
+}
+
+/* activar */
+.container-form.active {
+    opacity:1;
+    visibility:visible;
+}
+
+
+/* INPUT COMO LOGIN */
+.formulario {
+    display:flex;
+    flex-direction:column;
+}
+
+.formulario input,
+.formulario select,
+.formulario button {
+    width:100%;
+    padding:10px;
+    margin-bottom:14px;
+    font-size:16px;
+
+    border-radius:6px;
+
+    border:1px solid #7a6020;
+}
+
+.formulario input {
+    background:transparent;
+    border:none;
+    border-bottom:2px solid #7a6020;
+}
+
+.formulario button {
+    background:#d0a51b;
+    border:none;
+}
+
+.formulario button:hover {
+    background:#c49b14;
+}
+
+
+/* RESPONSIVE */
+@media (max-width:600px){
+    .nav-profesor {
+        flex-direction:column;
+    }
+
+    .nav-profesor button {
+        width:100%;
+    }
+
+    .container-form {
+        width:95%;
+    }
 }

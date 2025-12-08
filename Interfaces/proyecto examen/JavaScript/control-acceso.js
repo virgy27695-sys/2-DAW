@@ -25,6 +25,7 @@ window.addEventListener('DOMContentLoaded', function () {
         if (linkAlumno) linkAlumno.style.display = 'inline-block';
     } else if (usuarioLogueado.rol === 'Profesor') {
         if (linkProfesor) linkProfesor.style.display = 'inline-block';
+        if (linkAlumno) linkAlumno.style.display = 'inline-block';
     } else if (usuarioLogueado.rol === 'Alumno') {
         if (linkAlumno) linkAlumno.style.display = 'inline-block';
     }
@@ -43,7 +44,7 @@ window.addEventListener('DOMContentLoaded', function () {
     }
 
     if (pagina === "alumno.html" && usuarioLogueado.rol !== 'Alumno' && usuarioLogueado.rol !== 'Administrador' && usuarioLogueado.rol !== 'Profesor') {
-    alert("Solo alumnos, profesores o administradores pueden acceder.");
-    window.location.href = "index.html";
-}
+        alert("Solo alumnos, profesores o administradores pueden acceder.");
+        window.location.href = "index.html";
+    }
 });

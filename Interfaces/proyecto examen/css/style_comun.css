@@ -1,98 +1,181 @@
+/* RESET */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+    font-family:"Georgia", serif;
 }
 
+/* BODY FLEX PARA FOOTER SIEMPRE ABAJO */
 body {
-    min-height: 100vh;
-    flex-direction: column;
-    color: #d0a51b;
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+
+    background-size:cover;
+    background-attachment:fixed;
+
+    color:#3a2e08;
+
+    padding-top:90px;  /* compensa header fijo */
+}
+
+/* CONTENIDO EXPANDIBLE */
+.contenido {
+    flex:1;      /* ocupa todo el espacio libre */
 }
 
 /* HEADER */
 header {
-    width: 100%;
-    background-color: #634f0d;
-    color: white;
-    padding: 1rem 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 100;
+    width:100%;
+    background:#634f0d;
+    padding:16px 0px;
+
+    position:fixed;
+    top:0px;
 }
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 90%;
-    margin: 0 auto;
+    width:90%;
+    margin:0px auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
-/* LOGO */
 .logo {
-    display: flex;
-    align-items: center;
-    gap: 0.7rem;
-    text-decoration: none;
-    color: white;
-}
-
-.logo-img {
-    width: 45px;
-    height: 45px;
-    object-fit: cover;
-    border-radius: 50%;
+    display:flex;
+    gap:6px;
+    text-decoration:none;
 }
 
 .logo-title {
-    font-size: 1.4rem;
-    color: white;
-    font-weight: bold;
-    white-space: nowrap;
+    color:white;
 }
 
-/* LINKS DEL NAVBAR */
+.logo-img {
+    width:45px;
+    height:45px;
+    border-radius:50%;
+}
+
 .nav-links {
-    display: flex;
-    gap: 2rem;
+    display:flex;
+    gap:18px;
 }
 
 .nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
+    color:white;
+    text-decoration:none;
 }
 
 .nav-links a:hover {
-    text-decoration: underline;
+    text-decoration:underline;
 }
 
-/* FOOTER */
+/* FOOTER SIEMPRE ABAJO */
 footer {
-    width: 100%;
-    background-color: #634f0d;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    position: relative;
-    margin-top: auto;
+    background:#634f0d;
+    color:white;
+    padding:12px;
+    text-align:center;
 }
 
-footer p {
-    font-size: 0.9rem;
+/* FORMULARIOS */
+
+.container-form {
+    background:rgba(245,245,220,0.9);
+    width:400px;
+    padding:20px;
+    border-radius:12px;
+    margin:20px auto;
+    box-shadow:0px 0px 12px rgba(0,0,0,0.2);
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:opacity 300ms ease;
+}
+
+.container-form.active {
+    opacity:1;
+    visibility:visible;
+}
+
+/* FORMULARIO INTERNAMENTE */
+.formulario {
+    display:flex;
+    flex-direction:column;
+}
+
+.formulario input,
+.formulario select,
+.formulario button {
+    width:100%;
+    padding:10px;
+    margin-bottom:14px;
+    border-radius:6px;
+    border:1px solid #7a6020;
+    font-size:16px;
+}
+
+.formulario input {
+    background:transparent;
+    border-bottom:2px solid #7a6020;
+}
+
+.formulario button {
+    background:#d0a51b;
+    border:none;
+    cursor:pointer;
+}
+
+.formulario button:hover {
+    background:#c49b14;
+}
+
+/* TABLAS */
+table {
+    width:90%;
+    margin:20px auto;
+    border-collapse:collapse;
+    background:rgba(255,255,255,0.85);
+}
+
+th {
+    background:#634f0d;
+    color:white;
+    padding:10px;
+}
+
+td {
+    border:1px solid #7a6020;
+    padding:10px;
+}
+
+/* BOTONES GENERALES */
+button {
+    background:#d0a51b;
+    border:none;
+    border-radius:20px;
+    padding:6px 12px;
+    cursor:pointer;
+}
+
+button:hover {
+    background:#c49b14;
+}
+
+/* MOSTRAR / OCULTAR */
+.tabla-usuarios {
+    opacity:0;
+    visibility:hidden;
+}
+
+.tabla-usuarios.active {
+    opacity:1;
+    visibility:visible;
 }
 
 
-.container-form, .tabla-usuarios {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-}
-
-.container-form.active, .tabla-usuarios.active {
-    opacity: 1;
-    visibility: visible;
-}
